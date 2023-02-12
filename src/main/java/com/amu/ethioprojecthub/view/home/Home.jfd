@@ -1,0 +1,171 @@
+JFDML JFormDesigner: "8.0.1.0.199" Java: "17.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "fill,insets 4 0 0 5,hidemode 3,aligny top"
+			"$columnConstraints": "[260,grow,fill][229,grow,fill][398,fill][433,grow,fill]"
+			"$rowConstraints": "[40!,fill]0[40][57][][]0[]"
+		} ) {
+			name: "this"
+			"background": new java.awt.Color( 23, 35, 51, 255 )
+			"preferredSize": new java.awt.Dimension( 950, 600 )
+			"minimumSize": new java.awt.Dimension( 950, 600 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space :::x, comp jTextField1:::p:319:p, space u:::p, comp jLabel7:::p::p, space :p:34:p}}"
+				"$verticalGroup": "par l {seq {space :::p, par l {comp jTextField1::::38:x, comp jLabel7::::38:x}, space :::p}}"
+			} ) {
+				name: "jPanel2"
+				"background": new java.awt.Color( 71, 120, 197, 255 )
+				"preferredSize": new java.awt.Dimension( 396, 50 )
+				"minimumSize": new java.awt.Dimension( 396, 50 )
+				addEvent( new FormEvent( "java.awt.event.MouseMotionListener", "mouseDragged", "jPanel2MouseDragged", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "jPanel2MousePressed", true ) )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "jTextField1"
+					"background": new java.awt.Color( 23, 35, 51, 255 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"caretColor": new java.awt.Color( 255, 255, 255, 255 )
+					"preferredSize": new java.awt.Dimension( 2, 20 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel7"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/static/images/icons8-search-25.png" )
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0 4 1,aligny center,growy 0,height 50::50"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "insets 0,hidemode 3,alignx leading,gap 5 5"
+				"$columnConstraints": "[fill]"
+				"$rowConstraints": "rel[][][fill][fill][][][]0[0]0[grow][][][][]"
+			} ) {
+				name: "panel3"
+				"background": new java.awt.Color( 71, 120, 197, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq t {space ::69:x, comp jLabel16:::p::p, space :p:67:p}}"
+					"$verticalGroup": "par l {seq t {space :0:0:x, comp jLabel16:::p::p}}"
+				} ) {
+					name: "jPanel8"
+					"background": new java.awt.Color( 120, 168, 252, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel16"
+						"font": &Font0 new java.awt.Font( "JetBrains Mono Medium", 0, 14 )
+						"foreground": sfield java.awt.Color black
+						"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/static/images/icons8-search-50.png" )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/static/images/ethio TechVille.png" )
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :25:25:p, comp jLabel12:::p:245:p, space :::x}}"
+					"$verticalGroup": "par l {seq {space :15:15:p, comp jLabel12:::p:30:p, space :::x}}"
+				} ) {
+					name: "jPanel4"
+					"background": &Color0 new java.awt.Color( 120, 168, 252, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel12"
+						"font": #Font0
+						"foreground": sfield java.awt.Color black
+						"text": "Tekletsadik"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :25:25:p, comp jLabel15:::p:245:p, space :::x}}"
+					"$verticalGroup": "par l {seq {space :15:15:p, comp jLabel15:::p:30:p, space :::x}}"
+				} ) {
+					name: "jPanel7"
+					"background": #Color0
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel15"
+						"font": #Font0
+						"foreground": sfield java.awt.Color black
+						"text": "+251944734444"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 2"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :p:25:p, comp jLabel14:::p::p, space :::x}}"
+					"$verticalGroup": "par l {seq l {space :p:15:p, comp jLabel14:::p:30:p, space :::x}}"
+				} ) {
+					name: "jPanel5"
+					"background": #Color0
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel14"
+						"font": new java.awt.Font( "JetBrains Mono Medium", 0, 14 )
+						"foreground": sfield java.awt.Color black
+						"text": "tekletsadikethiopia@gmail.com"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 3"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :25:25:p, comp jLabel18:::p:245:p, space :::x}}"
+					"$verticalGroup": "par l {seq {space :15:15:p, comp jLabel18:::p:30:p, space :::x}}"
+				} ) {
+					name: "jPanel9"
+					"background": #Color0
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel18"
+						"font": #Font0
+						"foreground": sfield java.awt.Color black
+						"text": "My Projects"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 4"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :p:25:p, comp jLabel17:::p::p, space :::x}}"
+					"$verticalGroup": "par l {seq l {space :p:15:p, comp jLabel17:::p:30:p, space :::x}}"
+				} ) {
+					name: "jPanel6"
+					"background": new java.awt.Color( 120, 168, 252, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel17"
+						"font": new java.awt.Font( "JetBrains Mono Medium", 0, 15 )
+						"foreground": sfield java.awt.Color black
+						"text": "Edit profile"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 5"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {comp ind_4:::p:0:p, space :p:35:p, comp jLabel13:::p::p, space :0:203:x}}"
+					"$verticalGroup": "par l {seq {comp ind_4:::p::p, space :0:8:x}, seq {space :p:16:p, comp jLabel13:::::x, space :::p}}"
+				} ) {
+					name: "btn_4"
+					"background": new java.awt.Color( 255, 0, 51, 255 )
+					"font": new java.awt.Font( "JetBrains Mono Medium", 0, 15 )
+					"minimumSize": new java.awt.Dimension( 80, 51 )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "btn_1MousePressed", true ) )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {space :0:0:x}"
+						"$verticalGroup": "par l {space :0:43:x}"
+					} ) {
+						name: "ind_4"
+						"opaque": false
+						"preferredSize": new java.awt.Dimension( 3, 43 )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel13"
+						"font": new java.awt.Font( "JetBrains Mono Medium", 0, 13 )
+						"foreground": sfield java.awt.Color black
+						"text": "Logout"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 12,aligny bottom,growy 0"
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1 1 5,alignx left,grow 0 100"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 316 )
+		} )
+	}
+}

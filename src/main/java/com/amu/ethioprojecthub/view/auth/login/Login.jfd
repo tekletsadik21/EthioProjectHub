@@ -1,0 +1,128 @@
+JFDML JFormDesigner: "8.0.1.0.199" Java: "17.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "hidemode 3,align center center"
+			"$columnConstraints": "[631,fill]"
+			"$rowConstraints": "[628]"
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 534, 734 )
+			"minimumSize": new java.awt.Dimension( 500, 700 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fill,insets 10,hidemode 3,align center center"
+				"$columnConstraints": "[124,fill]"
+				"$rowConstraints": "[0][]"
+			} ) {
+				name: "panel3"
+				"foreground": new java.awt.Color( 245, 245, 245, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+					"$layoutConstraints": "fill,insets 10,hidemode 3,gap 0 5"
+					"$columnConstraints": "[fill]"
+					"$rowConstraints": "[149,grow][27,grow]0[28]0[10]0[0]0[13]0[25,grow][21,grow]0[][41][][]"
+				} ) {
+					name: "loginForm"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "logo"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/static/images/Ethio ProjectHub.png" )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "pad 2 30 2 2,cell 0 0,align center top,grow 0 0,width 300:300,height 200:200"
+					} )
+					add( new FormComponent( "com.jformdesigner.designer.wrapper.JGoodiesFormsLabel" ) {
+						name: "label2"
+						"textWithMnemonic": "username or email"
+						"foreground": new java.awt.Color( 255, 0, 0, 255 )
+						"font": new java.awt.Font( "JetBrains Mono Light", 0, 14 )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 1,align center bottom,grow 0 0,width 270::270,height 20::20"
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "usename"
+						"toolTipText": "email or username"
+						"preferredSize": new java.awt.Dimension( 100, 40 )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 2,alignx center,growx 0,width 270::270,height 40::40"
+					} )
+					add( new FormComponent( "com.jformdesigner.designer.wrapper.JGoodiesFormsLabel" ) {
+						name: "label1"
+						"textWithMnemonic": "Password"
+						"foreground": new java.awt.Color( 255, 0, 51, 255 )
+						"font": new java.awt.Font( "JetBrains Mono Light", 0, 14 )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 5,align center bottom,grow 0 0,width 270::270,height 20::20"
+					} )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "password"
+						"toolTipText": "password"
+						"selectionColor": new java.awt.Color( 210, 204, 255, 255 )
+						"name": "password"
+						"cursor": new java.awt.Cursor( 2 )
+						"minimumSize": new java.awt.Dimension( 150, 40 )
+						"preferredSize": new java.awt.Dimension( 100, 40 )
+						auxiliary() {
+							"JavaCodeGenerator.variableName": "password"
+						}
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 6,alignx center,growx 0,width 270::270,height 40::40"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"text": "Login"
+						"font": new java.awt.Font( "JetBrains Mono Medium", 0, 16 )
+						"defaultCapable": false
+						"focusable": false
+						"foreground": new java.awt.Color( 245, 245, 245, 255 )
+						"borderPainted": false
+						auxiliary() {
+							"JavaCodeGenerator.variableName": "loginBtn"
+						}
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "login", true ) )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 8,alignx center,growx 0,width 120::120,height 40::40"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button2"
+						"text": "forgot password?"
+						"foreground": sfield java.awt.Color orange
+						"font": &Font0 new java.awt.Font( "JetBrains Mono Medium", 0, 14 )
+						"border": &EmptyBorder0 new javax.swing.border.EmptyBorder( 5, 5, 5, 5 )
+						"horizontalAlignment": 10
+						"borderPainted": false
+						"contentAreaFilled": false
+						"minimumSize": &Dimension0 new java.awt.Dimension( 170, 40 )
+						"preferredSize": new java.awt.Dimension( 170, 40 )
+						"maximumSize": &Dimension1 new java.awt.Dimension( 293, 40 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "forgotPassword", true ) )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 9,align center center,grow 0 0,width 270::270,height 40::40"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button4"
+						"text": "dont have account? Signup"
+						"foreground": sfield java.awt.Color magenta
+						"font": #Font0
+						"border": #EmptyBorder0
+						"horizontalAlignment": 10
+						"borderPainted": false
+						"contentAreaFilled": false
+						"minimumSize": #Dimension0
+						"preferredSize": new java.awt.Dimension( 230, 40 )
+						"maximumSize": #Dimension1
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "signup", true ) )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 10,alignx center,growx 0,wmin 270"
+					} )
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0 1 2,align center center,grow 0 0"
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0,align center center,grow 0 0"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 55, 25 )
+			"size": new java.awt.Dimension( 615, 630 )
+		} )
+	}
+}
