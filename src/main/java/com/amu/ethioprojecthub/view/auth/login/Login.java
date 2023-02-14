@@ -4,7 +4,12 @@
 
 package com.amu.ethioprojecthub.view.auth.login;
 
+import com.amu.ethioprojecthub.controller.AuthController;
+import com.amu.ethioprojecthub.controller.LoginListener;
+import com.amu.ethioprojecthub.model.User;
+
 import com.amu.ethioprojecthub.view.MainFrame;
+import com.amu.ethioprojecthub.view.home.Home;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import net.miginfocom.swing.MigLayout;
 
@@ -12,22 +17,46 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Map;
 
 /**
- * @author tekle
+ * @author natnael seyoum
  */
 public class Login extends JPanel {
+    AuthController authController;
+    private CardLayout cardLayout;
+    private User user = new User();
+
+    private LoginListener listener;
+
     private MainFrame mainFrame;
-    public Login(MainFrame mainFrame) {
+    public Login(MainFrame mainFrame,LoginListener listener) throws SQLException {
         this.mainFrame = mainFrame;
+        this.authController = new AuthController();
+        this.listener = listener;
         initComponents();
     }
 
     private void forgotPassword(ActionEvent e) {
     }
 
-    private void login(ActionEvent e) {
+    private void login(ActionEvent e) throws IOException, SQLException {
+        String email = emailField.getText();
+        String password = new String(passwordField.getPassword());
+        user.setEmail(email);
+        user.setPassword(password);
 
+        User success = authController.login(user);
+
+
+        // view update
+        if(!success.equals(null)){
+            listener.onLoginSuccess(success);
+        } else {
+            listener.onLoginFailure("Login failed");
+        }
     }
 
     private void signup(ActionEvent e) {
@@ -38,13 +67,15 @@ public class Login extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - Tekletsadik A
         DefaultComponentFactory compFactory = DefaultComponentFactory.getInstance();
+        cardLayout = new CardLayout();
+
         panel3 = new JPanel();
         loginForm = new JPanel();
         logo = new JLabel();
-        label2 = compFactory.createLabel("username or email");
-        usename = new JFormattedTextField();
-        label1 = compFactory.createLabel("Password");
-        password = new JPasswordField();
+        emailLabel = compFactory.createLabel("email");
+        emailField = new JFormattedTextField();
+        passwordLabel = compFactory.createLabel("Password");
+        passwordField = new JPasswordField();
         loginBtn = new JButton();
         button2 = new JButton();
         button4 = new JButton();
@@ -52,13 +83,7 @@ public class Login extends JPanel {
         //======== this ========
         setPreferredSize(new Dimension(534, 734));
         setMinimumSize(new Dimension(500, 700));
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
-        . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "" , javax. swing
-        .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
-        Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
-        ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
-        public void propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r" .equals ( e. getPropertyName (
-        ) ) )throw new RuntimeException( ) ;} } );
+
         setLayout(new MigLayout(
             "hidemode 3,align center center",
             // columns
@@ -101,29 +126,29 @@ public class Login extends JPanel {
                 logo.setIcon(new ImageIcon(getClass().getResource("/static/images/Ethio ProjectHub.png")));
                 loginForm.add(logo, "pad 2 30 2 2,cell 0 0,align center top,grow 0 0,width 300:300,height 200:200");
 
-                //---- label2 ----
-                label2.setForeground(Color.red);
-                label2.setFont(new Font("JetBrains Mono Light", Font.PLAIN, 14));
-                loginForm.add(label2, "cell 0 1,align center bottom,grow 0 0,width 270::270,height 20::20");
+                //---- emailLabel ----
+                emailLabel.setForeground(Color.red);
+                emailLabel.setFont(new Font("JetBrains Mono Light", Font.PLAIN, 14));
+                loginForm.add(emailLabel, "cell 0 1,align center bottom,grow 0 0,width 270::270,height 20::20");
 
-                //---- usename ----
-                usename.setToolTipText("email or username");
-                usename.setPreferredSize(new Dimension(100, 40));
-                loginForm.add(usename, "cell 0 2,alignx center,growx 0,width 270::270,height 40::40");
+                //---- emailField ----
+                emailField.setToolTipText("email or username");
+                emailField.setPreferredSize(new Dimension(100, 40));
+                loginForm.add(emailField, "cell 0 2,alignx center,growx 0,width 270::270,height 40::40");
 
-                //---- label1 ----
-                label1.setForeground(new Color(0xff0033));
-                label1.setFont(new Font("JetBrains Mono Light", Font.PLAIN, 14));
-                loginForm.add(label1, "cell 0 5,align center bottom,grow 0 0,width 270::270,height 20::20");
+                //---- passwordLabel ----
+                passwordLabel.setForeground(new Color(0xff0033));
+                passwordLabel.setFont(new Font("JetBrains Mono Light", Font.PLAIN, 14));
+                loginForm.add(passwordLabel, "cell 0 5,align center bottom,grow 0 0,width 270::270,height 20::20");
 
                 //---- password ----
-                password.setToolTipText("password");
-                password.setSelectionColor(new Color(0xd2ccff));
-                password.setName("password");
-                password.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-                password.setMinimumSize(new Dimension(150, 40));
-                password.setPreferredSize(new Dimension(100, 40));
-                loginForm.add(password, "cell 0 6,alignx center,growx 0,width 270::270,height 40::40");
+                passwordField.setToolTipText("password");
+                passwordField.setSelectionColor(new Color(0xd2ccff));
+                passwordField.setName("password");
+                passwordField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+                passwordField.setMinimumSize(new Dimension(150, 40));
+                passwordField.setPreferredSize(new Dimension(100, 40));
+                loginForm.add(passwordField, "cell 0 6,alignx center,growx 0,width 270::270,height 40::40");
 
                 //---- loginBtn ----
                 loginBtn.setText("Login");
@@ -132,7 +157,13 @@ public class Login extends JPanel {
                 loginBtn.setFocusable(false);
                 loginBtn.setForeground(new Color(0xf5f5f5));
                 loginBtn.setBorderPainted(false);
-                loginBtn.addActionListener(e -> login(e));
+                loginBtn.addActionListener(e -> {
+                    try {
+                        login(e);
+                    } catch (IOException | SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
                 loginForm.add(loginBtn, "cell 0 8,alignx center,growx 0,width 120::120,height 40::40");
 
                 //---- button2 ----
@@ -150,7 +181,7 @@ public class Login extends JPanel {
                 loginForm.add(button2, "cell 0 9,align center center,grow 0 0,width 270::270,height 40::40");
 
                 //---- button4 ----
-                button4.setText("dont have account? Signup");
+                button4.setText("don't have account? Signup");
                 button4.setForeground(Color.magenta);
                 button4.setFont(new Font("JetBrains Mono Medium", Font.PLAIN, 14));
                 button4.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -169,15 +200,17 @@ public class Login extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     // Generated using JFormDesigner Evaluation license - Tekletsadik A
     private JPanel panel3;
     private JPanel loginForm;
     private JLabel logo;
-    private JLabel label2;
-    private JFormattedTextField usename;
-    private JLabel label1;
-    private JPasswordField password;
+    private JLabel emailLabel;
+    private JFormattedTextField emailField;
+    private JLabel passwordLabel;
+    private JPasswordField passwordField;
     private JButton loginBtn;
     private JButton button2;
     private JButton button4;
