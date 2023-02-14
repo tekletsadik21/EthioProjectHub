@@ -11,9 +11,13 @@ import java.io.IOException;
 
 @Service
 public class FirebaseInitialize {
+    public FileInputStream getServiceAccount() {
+        return serviceAccount;
+    }
+
+    private FileInputStream serviceAccount;
     @PostConstruct
     public void initialize(){
-        FileInputStream serviceAccount = null;
         try {
             serviceAccount = new FileInputStream("./serviceAccount.json");
             FirebaseOptions options = FirebaseOptions.builder()

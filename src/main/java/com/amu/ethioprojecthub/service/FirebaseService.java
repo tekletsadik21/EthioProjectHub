@@ -2,20 +2,27 @@ package com.amu.ethioprojecthub.service;
 
 import com.amu.ethioprojecthub.model.User;
 import com.google.api.core.ApiFuture;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
 import com.google.firebase.cloud.FirestoreClient;
+
 import org.springframework.stereotype.Service;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 @Service
 public class FirebaseService {
+    private FirebaseInitialize firebaseInitialize;
     public String saveUserData(User user) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionApiResult = dbFirestore.collection("users").document(user.getUsername()).set(user);
@@ -59,6 +66,7 @@ public class FirebaseService {
             throw new RuntimeException(e);
         }
     }
+
 
 
 }
