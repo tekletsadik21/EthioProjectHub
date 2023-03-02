@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "8.0.1.0.199" Java: "17.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:19:p, comp logo:::p:58:p, space ::173:x}}"
+			"$verticalGroup": "par l {seq l {comp logo:::p:59:p, space :0:241:x}}"
+		} ) {
+			name: "this"
+			"minimumSize": new java.awt.Dimension( 250, 300 )
+			"preferredSize": new java.awt.Dimension( 250, 300 )
+			"maximumSize": new java.awt.Dimension( 250, 300 )
+			"background": new java.awt.Color( 44, 52, 58, 255 )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.JGoodiesFormsLabel" ) {
+				name: "logo"
+				"background": new java.awt.Color( 44, 52, 58, 255 )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/static/images/img-eth.png" )
+				"horizontalAlignment": 0
+				"border": new javax.swing.border.MatteBorder( 1, 1, 1, 1, new java.awt.Color( 54, 81, 207, 255 ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 10 )
+			"size": new java.awt.Dimension( 250, 300 )
+		} )
+	}
+}
